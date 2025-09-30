@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Treasure Hunt Puzzle</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; }
+    img { max-width: 200px; margin: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Treasure Hunt Puzzle</h1>
+  <p>Scan the QR to unlock a random puzzle piece!</p>
+  <div id="puzzle"></div>
+
+  <script>
+    // List your images
+    const pieces = [
+      "row-1-column-1.png",
+      "row-1-column-2.png",
+      "row-1-column-3.png",
+      "row-2-column-1.png",
+      "row-2-column-2.png",
+      "row-2-column-3.png",
+      "row-3-column-1.png",
+      "row-3-column-2.png",
+      "row-3-column-3.png"
+    ];
+
+    // Pick one random piece
+    const randomPiece = pieces[Math.floor(Math.random() * pieces.length)];
+
+    // Show it
+    const img = document.createElement("img");
+    img.src = randomPiece;
+    document.getElementById("puzzle").appendChild(img);
+  </script>
+</body>
+</html>
